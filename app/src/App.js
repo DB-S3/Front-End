@@ -11,6 +11,7 @@ import Modules from './Dashboard/Modules';
 import WebsiteBuilder from './Components/cms/WebsiteBuilder';
 import Login from './Components/Home Page/Login';
 import Register from './Components/Home Page/Register';
+import Landing from './Components/LandingPage/Landing';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           <Switch>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/landing">
+              <Landing />
             </Route>
             <Route path="/register">
               <Register />
