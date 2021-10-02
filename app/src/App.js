@@ -12,6 +12,7 @@ import WebsiteBuilder from './Components/cms/WebsiteBuilder';
 import Login from './Components/Home Page/Login';
 import Register from './Components/Home Page/Register';
 import Landing from './Components/LandingPage/Landing';
+import Plans from './Components/LandingPage/Plans';
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/landing">
-              <Landing />
+            <Route path="/plans">
+              <Plans />
             </Route>
             <Route path="/register">
               <Register />
@@ -31,7 +32,7 @@ function App() {
               <Modules />
             </Route>
             <Route exact path="/">
-              <Home />
+              <Landing />
             </Route>
             <Route path="/cms">
               <WebsiteBuilder/>

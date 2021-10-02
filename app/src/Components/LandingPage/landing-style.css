@@ -1,0 +1,338 @@
+@media only screen and (max-width: 767px) {
+    
+    /* For mobile phones: */
+    .triangledownwards{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width:  9vh 100vw 0 0 ;
+        border-color: #404EED transparent transparent transparent;
+        
+    }
+    
+    .images{
+        width: 90vw;
+    }
+
+    .triangleupwards{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width:  0 0 9vh 100vw;
+        border-color: transparent transparent #404EED transparent;
+        
+    }
+    
+    .header{
+        width: 100vw;
+        height: 8vh;
+    }
+    
+    .purple{
+        color: #404EED;
+    }
+    
+    .purpleBG{
+        background-color: #404EED;
+    }
+    
+    .panel{
+        width: 100vw;
+    }
+    
+    .headercontainer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .panelcontainer{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column-reverse;
+        margin-bottom: 5vh;
+        text-align: center;
+        width: 90vw;
+        margin: auto;
+    }
+    
+    .panelcontainerVert{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    
+    .imgplaceholder{
+        width: 30vw;
+        height: 25vw;
+        background-color: gray;
+    }
+    
+    .bigtext{
+        font-size: 3rem;
+        font-family: "roboto", "open sans";
+        
+    }
+    
+    p{
+        text-align: center;
+    }
+
+    .smalltext{
+        font-size: 1.25rem;
+        font-family: "roboto", "open sans";
+    }
+    
+    .textContainer{
+        text-align: center;
+        margin-bottom: 7vh;
+
+    }
+    
+    .white{
+        color: #ffffff;
+    }
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .column{
+        flex-direction: column;
+    }
+
+    .joinbtn{
+        background-color: #ffffff;
+      border: none;
+      padding: 0.5vw;
+      font-size: 1rem;
+      border-radius: 24px;  
+      width: 80vw;
+      height: 8vh;
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      -o-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
+      margin: auto;
+      margin-bottom: 2vh;
+    }
+    .login{
+        display:none;
+    }
+
+
+    .joinbtn:hover {
+        background-color: #cfcece;
+    
+    }
+    
+    .center{
+        margin: auto;
+    }
+     .menu{
+         overflow: hidden;
+         width: 100vw;
+         height: 0vh;
+         background-color: #404EED;
+         z-index: +3;
+        position: fixed;
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+     }
+
+     .menuItem {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .first {
+        padding-top: 68px;
+      }
+
+     .open{
+        height: 100vh;
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      span
+      {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background: #fff;
+        border-radius: 3px;
+        
+        z-index: 1;
+        
+        transform-origin: 4px 0px;
+        
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+
+      .desktop{
+          display: none;
+          width: 0px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* For mobile phones: */
+    .triangledownwards{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width:  15vh 100vw 0 0 ;
+        border-color: #404EED transparent transparent transparent;
+        
+    }
+    
+    .images{
+        width: 40vw;
+    }
+
+    .menu{
+        overflow: hidden;
+        width: 100vw;
+        height: 0vh;
+        background-color: #404EED;
+        z-index: +3;
+       position: fixed;
+       transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+    .triangleupwards{
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width:  0 0 15vh 100vw;
+        border-color: transparent transparent #404EED transparent;
+        
+    }
+    
+    .header{
+        width: 100vw;
+        height: 8vh;
+    }
+    
+    .purple{
+        color: #404EED;
+    }
+    
+    .purpleBG{
+        background-color: #404EED;
+    }
+    
+    .panel{
+        width: 100vw;
+    }
+    
+    .headercontainer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    .panelcontainer{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        margin-bottom: 5vh;
+    }
+    
+    .panelcontainerVert{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+    
+    .imgplaceholder{
+        width: 30vw;
+        height: 25vw;
+        background-color: gray;
+    }
+    
+    .bigtext{
+        font-size: 3rem;
+        font-family: "roboto", "open sans";
+    }
+    
+    .smalltext{
+        font-size: 1.25rem;
+        font-family: "roboto", "open sans";
+    }
+    
+    .textContainer{
+        width: 40vw;
+        
+    }
+    
+    .white{
+        color: #ffffff;
+    }
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .joinbtn{
+        background-color: #ffffff;
+      border: none;
+      padding: 0.5vw;
+      font-size: 1rem;
+      border-radius: 24px;  
+      width: 400px;
+      height: 50px;
+      -webkit-transition: background-color 0.3s ease-out;
+      -moz-transition: background-color 0.3s ease-out;
+      -o-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
+      margin: 10px;
+    }
+
+    .login{
+        width: 10vw;
+        height: 4vh;
+    }
+    
+    .joinbtn:hover{
+        background-color: #cfcece;
+        box-shadow: 1px 1px 1px black;
+    }
+    
+    .center{
+        margin: auto;
+    }
+    .menubtn{
+        display: none;
+    }
+
+    .menuItem{
+        padding: 2vh;
+        margin-top: 16vh;
+        text-decoration: none;
+        font-size: 1rem;
+        color: #fff;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+  }
