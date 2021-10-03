@@ -4,7 +4,7 @@ class Plans extends React.Component {
     render() { 
         return <div>
                     <div className={"container"}>
-                        <div className={"first card"}>
+                        <div className={"firstt card"}>
                             <p className={"bigtext"}>Standard</p>
                             <span>
                             <p>Custom Domain</p>
