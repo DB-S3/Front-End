@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Data } from './data';
 import CMSComponent from './CMSComponent';
 import TaskBar from './TaskBar';
-
+import axios from 'axios'
 function test(){}
 
 function addObj(data){
@@ -19,19 +19,27 @@ class WebsiteBuilder extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            dataJson: []
+            dataJson: null,
+            currentObj: null
         };
+        const instance = axios.create({
+            baseURL: 'http://localhost:5000'
+          });
+          instance.get('/page/viewpage/testpage').then(response => this.setState({dataJson: response.data}))
     }
 
-    componentDidMount(){
-        fetch('http://localhost:5000/api/website').then(Response => Response.json()).then(data => {this.setState({dataJson: data})});
-    }
+
     
     render() { 
-        {console.log(this.state.dataJson)}
+        console.log(this.state.dataJson);
+        if(this.state.dataJson == null){
+            return <div>
+                <TaskBar api={this.instance}/>
+                </div>;
+        }
         return <div>
-                <TaskBar/>
-                <div>{this.state.dataJson.map( (data) => <CMSComponent key={data.key} lock={test} obj={data}/>)}</div>
+                <TaskBar api={this.instance}/>
+                <div>{this.state.dataJson.objects.map( (ding) => <CMSComponent key={ding.key} lock={test} obj={ding}/>)}</div>
         </div>;
     }
 }

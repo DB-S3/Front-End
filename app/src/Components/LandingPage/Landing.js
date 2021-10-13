@@ -1,6 +1,7 @@
 import React, {  useRef, useState } from 'react';
 import "./landing-style.css"
 import mobdev from "./dc.svg"
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -10,7 +11,11 @@ function Landing(){
     const [menu, setMenu] = useState(false);
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
     const executeScroll = () => scrollToRef(myRef)
+    const [redirect, setRedirect] = useState(null);
 
+    if (redirect != null) {
+        return <Redirect to={redirect} />
+      }
 
     return ( 
         <div style={{backgroundColor: bg ? "#394047" : "white"}}>
@@ -26,14 +31,14 @@ function Landing(){
                 </div> 
                 <div className={menu ? "open menu" : "menu"}> 
                     <a onClick={()=> setMenu(false)} className="closebtn">&times;</a>
-                    <a className={"first menuItem"} href="#">Login</a>
+                    <a className={"first menuItem"} onClick={() => setRedirect("/login")}>Login</a>
                     <a className={"menuItem"} href="#">Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
                 </div> 
                 <div className={"desktop center"}> 
                     <a className={"menuItem"} href="#">Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
-                    <button className="login joinbtn ">Login</button>                    
+                    <button className="login joinbtn" onClick={() => setRedirect("/login")}>Login</button>                    
                 </div> 
 </div>
             <div className={"purpleBG panel"}>
@@ -45,7 +50,7 @@ function Landing(){
                     </div>
                     <div style={{justifyContent: 'center', marginBottom: "30vh"}} className={"column panelcontainer"}>
 
-                    <button className="joinbtn ">Join now</button>                    
+                    <button className="joinbtn" onClick={() => setRedirect("/register")}>Join now</button>                    
                     <button onClick={executeScroll} className="joinbtn ">See more</button>
                     </div>
 

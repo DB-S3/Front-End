@@ -2,38 +2,85 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
-function TaskBar() {
+import { getPropsWithDefaults } from '@fluentui/utilities';
+import axios from 'axios'
+
+function TaskBar(props) {
   var test = 0;
+  var data = {
+    "id": "33d56a0a-b733-4113-b5ff-3f34e118d80c",
+    "objectId": "3234c9ed-baaf-47c2-a7e6-94f8fd0a4b72",
+    "x": 0,
+    "xUnit": null,
+    "y": 0,
+    "yUnit": null,
+    "height": 100,
+    "heightUnit": "px",
+    "width": 100,
+    "widthUnit": "vw",
+    "colour": "green",
+    "backgroundColour": "#e0deda",
+    "borderRadius": null,
+    "text": null,
+    "path": null,
+    "position": "relative"
+};
     return (
-      <div >
-        <Button style={{float: "right", textTransform: "none"}} variant="contained" color="primary" disableElevation>
-          Back
-        </Button>
-        <div style={{float: "left"}}>
-        
-          <p style={{margin: "0px"}}>Selected Element</p>
+      <div>
+        <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: 'white'}}>
+          <p style={{width: "100%"}}>Edit</p>
+          <a onClick={() => axios.create({
+            baseURL: 'http://localhost:5000'
+          }).get('/api/object/editOptions',
+          "\"" + JSON.stringify(data) + "\""
+           ).then(response => console.log(response)) }>Save</a>
 
-        </div><br/>
-        <div style={{float: "left"}}>
-          <Button style={{  textTransform: "none"}}>New</Button>
-          <Button style={{  textTransform: "none"}}>Edit</Button>
-          <Button style={{  textTransform: "none"}}>Modules</Button>
-          <Button style={{  textTransform: "none"}}>Mobile</Button>
-          <Button style={{  textTransform: "none"}}>Desktop</Button>
-        </div>
-
-        <Divider style={{width: "100%"}} />
-        <div style={{float: "left"}}>
-          <Button style={{  textTransform: "none"}}>Text</Button>
-          <Button style={{  textTransform: "none"}}>Panel</Button>
-          <Button style={{  textTransform: "none"}}>Form</Button>
-          <Button style={{  textTransform: "none"}}>Image</Button>
-          <Button style={{  textTransform: "none"}}>Button</Button>
-          <Button style={{  textTransform: "none"}}>Icon</Button> 
-        </div>
-        <Divider style={{width: "100%"}} />
-
-
+          
+          <label for="fname">X: </label><br/>
+          <input type="text" id="fname" name="fname"/>
+          <select name="unit" id="unit">
+            <option value="px">px</option>
+            <option value="vw">vw</option>
+            <option value="%">%</option>
+          </select><br/>
+          <label for="fname">Y: </label><br/>
+          <input type="text" id="fname" name="fname"/>
+          <select name="unit" id="unit">
+            <option value="px">px</option>
+            <option value="vw">vw</option>
+            <option value="%">%</option>
+          </select><br/>
+          <label for="fname">Width: </label><br/>
+          <input type="text" id="fname" name="fname"/>
+          <select name="unit" id="unit">
+            <option value="px">px</option>
+            <option value="vw">vw</option>
+            <option value="%">%</option>
+          </select><br/>
+          <label for="fname">Height: </label><br/>
+          <input type="text" id="fname" name="fname"/>
+          <select name="unit" id="unit">
+            <option value="px">px</option>
+            <option value="vw">vw</option>
+            <option value="%">%</option>
+          </select><br/>
+          <label for="fname">Positon: </label><br/>
+          <select name="unit" id="unit">
+            <option value="fixed">fixed</option>
+            <option value="relative">relative</option>
+          </select><br/>
+          <label for="fname">Border Radius: </label><br/>
+          <input type="text" id="fname" name="fname"/>
+          <select name="unit" id="unit">
+            <option value="px">px</option>
+            <option value="vw">vw</option>
+            <option value="%">%</option>
+          </select><br/>
+          <label for="favcolor">Colour</label>
+          <input type="color" id="favcolor" name="favcolor"></input><br/>
+          <label for="favcolor">background Colour</label>
+          <input type="color" id="favcolor" name="favcolor"></input><br/>
+        </span>
       </div>
     );
   }

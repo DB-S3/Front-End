@@ -13,8 +13,12 @@ import Login from './Components/Home Page/Login';
 import Register from './Components/Home Page/Register';
 import Landing from './Components/LandingPage/Landing';
 import Plans from './Components/LandingPage/Plans';
+import { useSelector, useDispatch } from 'react-redux'
 
 function App() {
+  const count = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
+
   return (
     <div className="App">
          <Router>
@@ -36,6 +40,9 @@ function App() {
             </Route>
             <Route path="/cms">
               <WebsiteBuilder/>
+            </Route>
+            <Route path="/test">
+             <p> {count} </p>  
             </Route>
             <Route path="*">
             404 Page Not Found<br/>
