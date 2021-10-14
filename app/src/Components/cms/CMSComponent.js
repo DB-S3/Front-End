@@ -28,6 +28,7 @@ class CMSComponent extends Component {
       onClicking(click,shold){
           this.props.lock(click);
           this.setState({hold: shold})
+          this.props.setCurrentObject(this.props.obj.options)
       }
 
       setlock = (value) => {
@@ -51,7 +52,7 @@ class CMSComponent extends Component {
     render() { 
         if(this.props.obj.type == 2){
             if(this.props.obj.children != null && this.props.obj.children.length != 0){
-                return ( <div onMouseMove={(e) =>this.mouseMove(e)} style={{backgroundColor: this.props.obj.options.backgroundColour, height: this.props.obj.options.height + this.props.obj.options.heightUnit, width: this.props.obj.options.width + this.props.obj.options.widthUnit, left: this.props.obj.options.x + this.props.obj.options.xUnit, top: this.props.obj.options.y + this.props.obj.options.yUnit, position: this.props.obj.options.position, borderRadius: this.props.obj.options.borderRadius + "px"}} onMouseLeave={() => this.setState({hold: false})} onMouseDown={() =>  this.onClicking(true,true)} onMouseUp={() => this.onClicking(false,false)}>
+                return ( <div onMouseMove={(e) =>this.mouseMove(e)} style={{backgroundColor: this.props.obj.options.backgroundColour, height: this.props.obj.options.height + this.props.obj.options.heightUnit, width: this.props.obj.options.width + this.props.obj.options.widthUnit, left: this.props.obj.options.x + this.props.obj.options.xUnit, top: this.props.obj.options.y + this.props.obj.options.yUnit, position: this.props.obj.options.position, borderRadius: this.props.obj.options.borderRadius + "px"}} onMouseLeave={() => this.setState({hold: false})} onMouseDown={() =>  {this.onClicking(true,true); }} onMouseUp={() => this.onClicking(false,false)}>
                     { this.props.obj.children.map(x=> 
                             <CMSComponent key={x.key} lock={this.setlock} obj={x}/>
                     )}

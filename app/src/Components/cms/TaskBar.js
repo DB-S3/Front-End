@@ -1,34 +1,17 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
-import TextField from '@material-ui/core/TextField';
-import { getPropsWithDefaults } from '@fluentui/utilities';
 import axios from 'axios'
 
 function TaskBar(props) {
-  var test = 0;
-  var data = {
-    "id": "33d56a0a-b733-4113-b5ff-3f34e118d80c",
-    "objectId": "3234c9ed-baaf-47c2-a7e6-94f8fd0a4b72",
-    "x": 0,
-    "xUnit": null,
-    "y": 0,
-    "yUnit": null,
-    "height": 100,
-    "heightUnit": "px",
-    "width": 100,
-    "widthUnit": "vw",
-    "colour": "green",
-    "backgroundColour": "#e0deda",
-    "borderRadius": null,
-    "text": null,
-    "path": null,
-    "position": "relative"
-};
+  var data = props.obj;
+
+  function changeOption(id){
+    console.log(data.x)
+    props.changeObjFunction(id, data);
+  }
+  
     return (
       <div>
         <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: 'white'}}>
-          <p style={{width: "100%"}}>Edit</p>
           <a onClick={() => axios.create({
             baseURL: 'http://localhost:5000'
           }).get('/api/object/editOptions',
@@ -37,29 +20,29 @@ function TaskBar(props) {
 
           
           <label for="fname">X: </label><br/>
-          <input type="text" id="fname" name="fname"/>
-          <select name="unit" id="unit">
+          <input type="number" value={props.obj ? props.obj.x : 0} onChange={(event) => {data.x =+ event.target.valueAsNumber; props.changeObjFunction(props.obj.objectId, data); console.log(data.x);}}  id="fname" name="fname"/>
+          <select name="unit" id="unit" value={props.obj ? props.obj.xUnit : 0} onChange={(event) => {data.xUnit = event.target.value; props.changeObjFunction(props.obj.objectId, data);}}>
             <option value="px">px</option>
             <option value="vw">vw</option>
             <option value="%">%</option>
           </select><br/>
           <label for="fname">Y: </label><br/>
-          <input type="text" id="fname" name="fname"/>
-          <select name="unit" id="unit">
+          <input type="number" value={props.obj ? props.obj.y : 0} id="fname" onChange={(event) => {data.y =+ event.target.valueAsNumber; props.changeObjFunction(props.obj.objectId, data); console.log(data.y);}} name="fname"/>
+          <select name="unit" id="unit" value={props.obj ? props.obj.yUnit : 0} onChange={(event) => {data.yUnit = event.target.value; props.changeObjFunction(props.obj.objectId, data);}}>
             <option value="px">px</option>
             <option value="vw">vw</option>
             <option value="%">%</option>
           </select><br/>
-          <label for="fname">Width: </label><br/>
-          <input type="text" id="fname" name="fname"/>
-          <select name="unit" id="unit">
+          <label  for="fname">Width: </label><br/>
+          <input value={props.obj ? props.obj.width : 0} onChange={(event) => {data.width =+ event.target.valueAsNumber; props.changeObjFunction(props.obj.objectId, data); console.log(data.width);}} type="number" id="fname" name="fname"/>
+          <select name="unit" id="unit" value={props.obj ? props.obj.widthUnit : 0} onChange={(event) => {data.widthUnit = event.target.value; props.changeObjFunction(props.obj.objectId, data);}}>
             <option value="px">px</option>
             <option value="vw">vw</option>
             <option value="%">%</option>
           </select><br/>
           <label for="fname">Height: </label><br/>
-          <input type="text" id="fname" name="fname"/>
-          <select name="unit" id="unit">
+          <input value={props.obj ? props.obj.height : 0} onChange={(event) => {data.height =+ event.target.valueAsNumber; props.changeObjFunction(props.obj.objectId, data); console.log(data.width);}} type="number" id="fname" name="fname"/>
+          <select name="unit" id="unit" value={props.obj ? props.obj.heightUnit : 0} onChange={(event) => {data.heightUnit = event.target.value; props.changeObjFunction(props.obj.objectId, data);}}>
             <option value="px">px</option>
             <option value="vw">vw</option>
             <option value="%">%</option>
@@ -79,7 +62,7 @@ function TaskBar(props) {
           <label for="favcolor">Colour</label>
           <input type="color" id="favcolor" name="favcolor"></input><br/>
           <label for="favcolor">background Colour</label>
-          <input type="color" id="favcolor" name="favcolor"></input><br/>
+          <input type="color" id="favcolor" name="favcolor" value={props.obj ? props.obj.backgroundColor : '#fff'} onChange={(event) => {data.backgroundColor =+ event.target.value; props.changeObjFunction(props.obj.objectId, data); console.log(data.width);}}></input><br/>
         </span>
       </div>
     );
