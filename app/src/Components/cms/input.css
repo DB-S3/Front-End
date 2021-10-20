@@ -1,0 +1,81 @@
+.input-box{
+ width : 90%;
+ margin: 0 auto;
+ position: relative;
+ margin-bottom: 10px;
+}
+
+.input-textfield{
+    border: 0px;
+    width: 69%;
+    height: 35px;
+    padding: 0;
+    border-radius: 3px 0px 0px 3px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #cbcbcb;
+}
+
+.input-textfield:focus{
+    outline: none;
+}
+
+.input-selectbox{
+    border: 0px;
+    width: 30%;
+    height: 37px;
+    border-radius: 0px 3px 3px 0px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #cbcbcb;
+}
+
+.label-for-input{
+    float: left;
+}
+
+.input-textfield-full{
+    border: 0px;
+    width: 99%;
+    height: 37px;
+    padding: 0;
+    border-radius: 3px 3px 3px 3px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #cbcbcb;
+}
+ .input-colorpicker{
+     padding: 0;
+     margin: 0;
+     border-width:0px;
+     border:none;
+     outline:none;
+     background-color : #f8f9fb; 
+     width: 100%;
+     height: 50px;
+
+ }
+
+ .input-savebutton{
+    width: 100%;
+    height: 6vh;
+    background-color: #404EED;
+ }
+ .input-setbottom{
+    position:absolute;                 
+    bottom:0;                         
+    left:0; 
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 55px;
+    color: white;
+ }
+
