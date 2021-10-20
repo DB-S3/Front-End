@@ -3,6 +3,7 @@ import { Data } from './data';
 import CMSComponent from './CMSComponent';
 import TaskBar from './TaskBar';
 import axios from 'axios'
+
 function test(){}
 
 function addObj(data){
@@ -20,7 +21,8 @@ class WebsiteBuilder extends React.Component {
         super(props);
         this.state={
             dataJson: null,
-            currentObj: null
+            currentObj: null,
+            taskbarVisible: false
         };
 
 
@@ -31,7 +33,7 @@ class WebsiteBuilder extends React.Component {
     }
 
     setCurrentObject = (newObj) => {
-        this.setState({currentObj: newObj});
+        this.setState({currentObj: newObj, taskbarVisible: true});
         console.log(this.state.currentObj);
     }
     
@@ -40,11 +42,10 @@ class WebsiteBuilder extends React.Component {
     }
 
     findObj(obj, id, newOptions){
-        for(let i = 0; obj.length -1; i++){
+        for(let i = 0; obj.length; i++){
             if(obj[i].key == id){
-                obj[i].options = newOptions;
-                console.log(this.state.dataJson);
-                
+                obj[i].options = newOptions; 
+                break;               
             }
 
             if(obj[i].children.length > 0){
@@ -62,11 +63,10 @@ class WebsiteBuilder extends React.Component {
     render() { 
         if(this.state.dataJson == null){
             return <div>
-                <TaskBar obj={this.state.currentObj}/>
                 </div>;
         }
         return <div>
-                <TaskBar changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
+                <TaskBar visible={this.state.taskbarVisible} changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
                 <div>{this.state.dataJson.objects.map( (object) => <CMSComponent setCurrentObject={this.setCurrentObject} key={object.key} lock={test} obj={object}/>)}</div>
         </div>;
     }

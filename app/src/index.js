@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 
 document.title = "test"
 
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

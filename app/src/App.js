@@ -14,6 +14,7 @@ import Register from './Components/Home Page/Register';
 import Landing from './Components/LandingPage/Landing';
 import Plans from './Components/LandingPage/Plans';
 import { useSelector, useDispatch } from 'react-redux'
+import Website from './Components/viewsite/Website';
 
 function App() {
   const count = useSelector((state) => state.counter.value)
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/cms">
               <WebsiteBuilder/>
+            </Route>
+            <Route path="/website">
+              <Website/>
             </Route>
             <Route path="/test">
              <p> {count} </p>  
