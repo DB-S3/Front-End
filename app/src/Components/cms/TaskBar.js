@@ -1,18 +1,37 @@
 import React from 'react';
 import axios from 'axios';
 import './input.css';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
 function TaskBar(props) {
   var data = props.obj;
+  var newObject= false;
 
   function changeOption(id){
     props.changeObjFunction(id, data);
   }
     return (
       <div>
-        <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: '#f8f9fb', visibility: props.visible ? "visible" : "hidden"}}>
+        <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: '#222222', visibility: props.visible ? "visible" : "hidden"}}>
           <div className={"input-box"}>
             <p>Options</p>
             <p>x</p>
+          </div>
+          <a className={"input-savebutton input-box"} onClick={newObject = true}>New Object</a>
+          <a className={"input-setbottom input-savebutton input-box"} onClick={() => axios.create({
+            baseURL: 'http://localhost:5000'
+          }).post('/api/object/editOptions',
+          data
+          ).then(response => console.log(response))}>Save</a>
+        </span>
+
+
+
+
+        <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: '#222222', visibility: props.objOptions ? "visible" : "hidden"}}>
+          <div className={"input-box"}>
+          <ArrowBackIcon  style={{float: "left"}}/>
+            <p  style={{marginTop: "0px"}}>Options</p>
           </div>
           <div className={"input-box"}>
             <label className={"label-for-input"} for="fname">X position: </label><br/>

@@ -6,7 +6,7 @@
         height: 0;
         border-style: solid;
         border-width:  9vh 100vw 0 0 ;
-        border-color: #404EED transparent transparent transparent;
+        border-color: #7F39FB transparent transparent transparent;
         
     }
     
@@ -19,7 +19,7 @@
         height: 0;
         border-style: solid;
         border-width:  0 0 9vh 100vw;
-        border-color: transparent transparent #404EED transparent;
+        border-color: transparent transparent #7F39FB transparent;
         
     }
     
@@ -29,13 +29,17 @@
     }
     
     .purple{
-        color: #404EED;
+        color: #7F39FB;
     }
     
     .purpleBG{
-        background-color: #404EED;
+        background-color: #7F39FB;
     }
     
+    .headerColour{
+        background-color: #7F39FB;
+     }
+
     .panel{
         width: 100vw;
     }
@@ -133,7 +137,7 @@
          overflow: hidden;
          width: 100vw;
          height: 0vh;
-         background-color: #404EED;
+         background-color: #7F39FB;
          z-index: +3;
         position: fixed;
         transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -202,7 +206,7 @@
         height: 0;
         border-style: solid;
         border-width:  15vh 100vw 0 0 ;
-        border-color: #404EED transparent transparent transparent;
+        border-color: #7F39FB transparent transparent transparent;
         
     }
     
@@ -214,7 +218,7 @@
         overflow: hidden;
         width: 100vw;
         height: 0vh;
-        background-color: #404EED;
+        background-color: #7F39FB;
         z-index: +3;
        position: fixed;
        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -225,7 +229,7 @@
         height: 0;
         border-style: solid;
         border-width:  0 0 15vh 100vw;
-        border-color: transparent transparent #404EED transparent;
+        border-color: transparent transparent #7F39FB transparent;
         
     }
     
@@ -235,11 +239,13 @@
     }
     
     .purple{
-        color: #404EED;
+        color: #7F39FB;
     }
-    
+     .header{
+        background-color: #7F39FB;
+     }
     .purpleBG{
-        background-color: #404EED;
+        background-color: #7F39FB;
     }
     
     .panel{

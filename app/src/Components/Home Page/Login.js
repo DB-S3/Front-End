@@ -28,52 +28,28 @@ class Login extends Component {
         })
      }
 
-     register(username,password,mail){
-        fetch("http://localhost:7000/register/"+username+"/"+password+"/"+mail)
-        .then(res => res.text())
-        .then(text => {
-            console.log(text);
-            if(text == "succes"){
-                this.setState({redirect: "/login"})
-            }
-        })
-     }
-
-     currentMenu(bool){
-        if(bool == true){
-            return (<div><label for="fname">Username</label><br/>
-            <input className={"login-textInput"} type="text" id="Username" name="Username" onChange={(e) => this.setState({username: e.target.value})}/><br/>
-            <label for="lname">Password</label><br/>
-            <input className={"login-textInput"} type="text" id="Password" name="Password"onChange={(e) => this.setState({password: e.target.value})}/><br/></div>)
-        }else{
-        return (<div><label for="fname">Username</label><br/>
-            <input className={"login-textInput"} type="text" id="Username" name="Username" onChange={(e) => this.setState({username: e.target.value})}/><br/>
-            <label for="fname">Mail</label><br/>
-            <input className={"login-textInput"} type="text" id="Username" name="Username" onChange={(e) => this.setState({mail: e.target.value})}/><br/>
-            <label for="lname">Password</label><br/>
-            <input className={"login-textInput"} type="text" id="Password" name="Password"onChange={(e) => this.setState({password: e.target.value})}/><br/>
-            <label for="lname">Repeat Password</label><br/>
-            <input className={"login-textInput"} type="text" id="Password" name="Password"onChange={(e) => this.setState({passwordRepeat: e.target.value})}/><br/></div>)
-        } 
-    }
     render() { 
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
           }
-        return ( <div style={{backgroundColor: "#e6e1e1", height: "100vh", overflow: "none"}}>
-                            <div className={"login-Background-container"}>
-                                <div className={"login-Background-panel"}/>
-                            </div>
-                            <div className={"login-Panel"}>
-                                <p className={"login-top-text"}>Login</p>
-                                <div className={"login-switchbtn-container"}>
-                                    <a className={this.state.type ? "login-active login-one" : "login-one"} onClick={()=> this.setState({type: true})} type="button">Login</a>
-                                    <span className={this.state.type ? "login-switchbtn-bg" : "login-change login-switchbtn-bg"}> </span>
-                                    <a className={this.state.type ? " login-two" : "login-active login-two"} onClick={()=> this.setState({type: false})} type="button">Register</a>
-                                </div>
-                                    {this.currentMenu(this.state.type)}
-                                    <button type="button" onClick={(e) => this.login(this.state.username, this.state.password)}>Login</button>
-                            </div>
+        return ( <div style={{backgroundColor: "#000", height: "100vh"  , overflow: "none"}}>
+                           <div className={"login-container"}>
+                                <div className={'login-img'}>img</div>
+                                <div className={"login-panel"}>
+                                    <div style={{margin: "25px 12% 0px", width: "50px"}}>
+                                        <p style={{margin: "0",color: "#e1f6fc", position: 'relative', float: 'left', fontSize: "2.3em"}}>Login</p><br/><br/><br/>
+                                        <a style={{color: "#e1f6fc", position: 'relative', float: 'left', paddingLeft:"4px", fontSize: "0.7em"}}>Register</a>
+                                    </div>
+                                    <div className={"login-input-box"}>
+                                        <input type="text" className={"login-input"} placeholder="Email"></input>
+                                        <input type="text" className={"login-input"} placeholder="Password"></input><br/>
+                                        <div style={{width: "90%", margin: 'auto'}}>
+                                            <a className={"login-reset-password"}>Forgot password</a>
+                                            <button className={"login-button"}>➜</button>
+                                        </div>
+                                   </div>
+                               </div>
+                           </div>
                         </div> );
     }
 }

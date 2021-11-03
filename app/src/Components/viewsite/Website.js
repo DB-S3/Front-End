@@ -15,7 +15,7 @@ class Website extends React.Component {
         const instance = axios.create({
             baseURL: 'http://localhost:5000'
           });
-          instance.get('/page/viewpage/test').then(response => this.setState({dataJson: response.data}))
+          instance.get('/page/viewpage/'+ window.location.hostname + '/testpage').then(response => this.setState({dataJson: response.data}))
     }
 
 

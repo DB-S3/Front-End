@@ -7,7 +7,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Modules from './Dashboard/Modules';
 import WebsiteBuilder from './Components/cms/WebsiteBuilder';
 import Login from './Components/Home Page/Login';
 import Register from './Components/Home Page/Register';
@@ -15,11 +14,13 @@ import Landing from './Components/LandingPage/Landing';
 import Plans from './Components/LandingPage/Plans';
 import { useSelector, useDispatch } from 'react-redux'
 import Website from './Components/viewsite/Website';
+import AccountPage from './Dashboard/AccountPage';
 
 function App() {
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch()
 
+  if(window.location.hostname == "localhost"){
   return (
     <div className="App">
          <Router>
@@ -33,9 +34,6 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/Modules">
-              <Modules />
-            </Route>
             <Route exact path="/">
               <Landing />
             </Route>
@@ -45,8 +43,11 @@ function App() {
             <Route path="/website">
               <Website/>
             </Route>
-            <Route path="/test">
-             <p> {count} </p>  
+            <Route path="/dashboard">
+              <Home/>  
+            </Route>
+            <Route path="/account">
+              <AccountPage/>  
             </Route>
             <Route path="*">
             404 Page Not Found<br/>
@@ -56,6 +57,10 @@ function App() {
         </Router>
     </div>
   );
+  } else {
+    return(<Website/>)
+    
+  }
 }
 
 export default App;

@@ -13,6 +13,8 @@ function Landing(){
     const executeScroll = () => scrollToRef(myRef)
     const [redirect, setRedirect] = useState(null);
 
+
+
     if (redirect != null) {
         return <Redirect to={redirect} />
       }
@@ -23,7 +25,7 @@ function Landing(){
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
             
-            <div className={"purpleBG header headercontainer"}><p className={"center"}>Ortisy</p>              
+            <div className={"headerColour header headercontainer"}><p className={"center"}>Ortisy</p>              
                 <div onClick={()=> setMenu(!menu)} className="right menubtn center"> 
                     <span></span>
                     <span></span>
@@ -32,11 +34,11 @@ function Landing(){
                 <div className={menu ? "open menu" : "menu"}> 
                     <a onClick={()=> setMenu(false)} className="closebtn">&times;</a>
                     <a className={"first menuItem"} onClick={() => setRedirect("/login")}>Login</a>
-                    <a className={"menuItem"} href="#">Plans</a>
+                    <a className={"menuItem"} onClick={() => setRedirect("/plans")}>Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
                 </div> 
                 <div className={"desktop center"}> 
-                    <a className={"menuItem"} href="#">Plans</a>
+                    <a className={"menuItem"} onClick={() => setRedirect("/plans")}>Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
                     <button className="login joinbtn" onClick={() => setRedirect("/login")}>Login</button>                    
                 </div> 
@@ -68,26 +70,15 @@ function Landing(){
                 </div>
             </div>
 
-            <div className={"panel"}>
-                <div className={"column panelcontainer"}>
-                    
-                    <img className={"images"} src={mobdev}></img>
-                    <div className={"textContainer"}>
-                        <p className={"bigtext"}>Module programming</p>
-                        <p className={"smalltext"}>Add extra functionality through modules to external services</p>
-                        <a href="">See list</a>
-                    </div>
-                </div>
-            </div>
 
             <div className={"panel"}>
                 <div className={"panelcontainer"}>
+                <img className={"images"} src={mobdev}></img>
                     <div className={"textContainer"}>
                         <p className={"bigtext"}>Advanced statistics</p>
                         <p className={"smalltext"}>Get insight into your websites traffic</p>
                         <a href="">Read more</a>
                     </div>
-                    <img className={"images"} src={mobdev}></img>
                 </div>
             </div>
 

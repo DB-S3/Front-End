@@ -22,6 +22,7 @@ class WebsiteBuilder extends React.Component {
         this.state={
             dataJson: null,
             currentObj: null,
+            objOptions: false,
             taskbarVisible: false
         };
 
@@ -33,7 +34,7 @@ class WebsiteBuilder extends React.Component {
     }
 
     setCurrentObject = (newObj) => {
-        this.setState({currentObj: newObj, taskbarVisible: true});
+        this.setState({currentObj: newObj, objOptions: true});
         console.log(this.state.currentObj);
     }
     
@@ -66,8 +67,9 @@ class WebsiteBuilder extends React.Component {
                 </div>;
         }
         return <div>
-                <TaskBar visible={this.state.taskbarVisible} changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
+                <TaskBar visible={this.state.taskbarVisible} objList={this.state.dataJson} objOptions={this.state.objOptions} changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
                 <div>{this.state.dataJson.objects.map( (object) => <CMSComponent setCurrentObject={this.setCurrentObject} key={object.key} lock={test} obj={object}/>)}</div>
+                <span onClick={()=> this.setState({taskbarVisible: true})} style={{left: "0px", position: 'fixed', height: "75px", width: "30px", backgroundColor: "green", top: "30vh"}}></span>
         </div>;
     }
 }

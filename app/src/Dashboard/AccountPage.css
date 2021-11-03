@@ -1,0 +1,82 @@
+.AccountBackground{
+    width: 100vw;
+    height: 100vh;
+    background-Color: #222222;
+    position: relative;
+    float: right;
+}
+
+.AccountContentBox{
+    background-Color: #272727;
+    border-radius: 10px;
+    width: 65vw;
+    height: 70.5vh;
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.AccountBillingBox{
+    background-Color: #272727;
+    border-radius: 10px;
+    width: 25vw;
+    height: 70.5vh;
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.Account-UserName{
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.AccountContentHorizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vw 4.5vw 0px 4.5vw;
+
+}
+
+.White{
+    color: #fff;
+}
+
+.Next-InvoiceHeader{
+    font-size: 1.5rem;
+}
+
+.Account-Options-Container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    float: left;
+    margin-left: 70px;
+    margin-top: 70px;
+    color: #fff;
+}
+
+.Account-Button{
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
+    background-color: #7440CE;
+    border-color: #7440CE;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+
+}
+
+.Account-Button:hover {
+    color: #fff;
+    background-color: #A77EED;
+    border-color: #A77EED;
+}

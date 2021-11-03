@@ -1,0 +1,149 @@
+@media only screen and (min-width: 768px) {
+.DashNavBar{
+    width: 3vw;
+    height: 100vh;
+    position: fixed;
+    float: left;
+    z-index: +1;
+}
+
+.DashBackground{
+    width: 100vw;
+    height: 100vh;
+    background-Color: #222222;
+    position: relative;
+    float: right;
+}
+
+.DashContentBox{
+    background-Color: #272727;
+    border-radius: 10px;
+    width: 30vw;
+    height: 35vh;
+    margin-bottom: 0.5vw;
+}
+
+.DashContentHorizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2vw 4.5vw 0px 4.5vw;
+
+}
+
+.Dash-Button{
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
+    background-color: #7440CE;
+    border-color: #7440CE;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+
+}
+
+.Dash-Button:hover {
+    color: #fff;
+    background-color: #A77EED;
+    border-color: #A77EED;
+}
+
+.DashContentVertical{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.DashText{
+    color: #7F39FB
+}
+
+.burger{
+        display: block;
+        width: 2vw;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        
+        background: #fff;
+        border-radius: 3px;
+        
+        z-index: 1;
+        
+        transform-origin: 4px 0px;
+        
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+      }
+    }
+
+@media only screen and (max-width: 767px) {
+    .DashNavBar{
+        width: 3vw;
+        height: 100vh;
+        position: fixed;
+        float: left;
+        z-index: +1;
+    }
+    
+    .DashBackground{
+        width: 100vw;
+        height: 100vh;
+        background-Color: #222222;
+        position: relative;
+        float: right;
+    }
+    
+    .DashContentBox{
+        background-Color: #272727;
+        border-radius: 10px;
+        width: 90vw;
+        height: 80vh;
+        margin-bottom: 0.5vw;
+        position: relative;
+    }
+    
+    .DashContentHorizontal{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;    
+    }
+    
+    .DashContentVertical{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .DashText{
+        color: #7F39FB
+    }
+    
+    .burger{
+            display: block;
+            width: 2vw;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            
+            background: #fff;
+            border-radius: 3px;
+            
+            z-index: 1;
+            
+            transform-origin: 4px 0px;
+            
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+            }
+        }
