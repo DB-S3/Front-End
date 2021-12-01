@@ -2,12 +2,13 @@ import React, {  useRef, useState } from 'react';
 import "./landing-style.css"
 import mobdev from "./dc.svg"
 import { Redirect } from 'react-router-dom'
+import AuthService from '../auth0/AuthService';
 
 
 
 function Landing(){
     const myRef = useRef(null)
-    const [bg, setBG] = useState(false);
+    const [bg, setBG] = useState(true);
     const [menu, setMenu] = useState(false);
     const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   
     const executeScroll = () => scrollToRef(myRef)
@@ -20,7 +21,7 @@ function Landing(){
       }
 
     return ( 
-        <div style={{backgroundColor: bg ? "#394047" : "white"}}>
+        <div style={{backgroundColor: bg ? "#272727" : "white"}}>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
@@ -33,14 +34,14 @@ function Landing(){
                 </div> 
                 <div className={menu ? "open menu" : "menu"}> 
                     <a onClick={()=> setMenu(false)} className="closebtn">&times;</a>
-                    <a className={"first menuItem"} onClick={() => setRedirect("/login")}>Login</a>
+                    <a className={"first menuItem"} onClick={() => new AuthService().login()}>Login</a>
                     <a className={"menuItem"} onClick={() => setRedirect("/plans")}>Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
                 </div> 
                 <div className={"desktop center"}> 
                     <a className={"menuItem"} onClick={() => setRedirect("/plans")}>Plans</a>
                     <a className={"menuItem"} href="#">Support</a>
-                    <button className="login joinbtn" onClick={() => setRedirect("/login")}>Login</button>                    
+                    <button className="login joinbtn" onClick={() => new AuthService().login()}>Login</button>                    
                 </div> 
 </div>
             <div className={"purpleBG panel"}>
@@ -52,7 +53,7 @@ function Landing(){
                     </div>
                     <div style={{justifyContent: 'center', marginBottom: "30vh"}} className={"column panelcontainer"}>
 
-                    <button className="joinbtn" onClick={() => setRedirect("/register")}>Join now</button>                    
+                    <button className="joinbtn" onClick={() => setRedirect("/register")} onClick={() => new AuthService().login()}>Join now</button>                    
                     <button onClick={executeScroll} className="joinbtn ">See more</button>
                     </div>
 
@@ -62,8 +63,8 @@ function Landing(){
             <div className={"panel"}>
                 <div className={"panelcontainer"}>
                     <div className={"textContainer"}>
-                        <p className={"bigtext"}>Mobile development ready</p>
-                        <p className={"smalltext"}>Automatically resize your application for all platforms</p>
+                        <p className={"bigtext white"}>Mobile development ready</p>
+                        <p className={"smalltext white"}>Automatically resize your application for all platforms</p>
                         <a href="">Read more</a>
                     </div>
                     <img className={"images"} src={mobdev}></img>
@@ -75,8 +76,8 @@ function Landing(){
                 <div className={"panelcontainer"}>
                 <img className={"images"} src={mobdev}></img>
                     <div className={"textContainer"}>
-                        <p className={"bigtext"}>Advanced statistics</p>
-                        <p className={"smalltext"}>Get insight into your websites traffic</p>
+                        <p className={"bigtext white"}>Advanced statistics</p>
+                        <p className={"smalltext white"}>Get insight into your websites traffic</p>
                         <a href="">Read more</a>
                     </div>
                 </div>

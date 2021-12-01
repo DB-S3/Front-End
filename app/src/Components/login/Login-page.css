@@ -1,0 +1,128 @@
+@media only screen and (min-width: 768px) {
+.login-box{
+    background-color: #272727;
+    width: 50vw;
+    height: 60vh;
+    left: 25vw;
+    position: fixed;
+    z-index: +1;
+}
+
+.login-input{
+    padding-left: 10px; 
+	border:none;
+	outline: none;
+	border: 1px solid #fff;
+    background-color: #272727;
+	transition: .5s;
+    color: #fff;
+    width: 80%;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+}
+
+.login-button{
+    width: 40%;
+    background-color: #7F39FB;
+    height: 5vh;
+    border-radius: 25px;
+    border: 0px;
+    color: #fff;
+    font-size: 1rem;
+
+}
+
+.login-linktext{
+    color: #7F39FB;
+}
+
+.login-text{
+    color: #fff;
+}
+
+.login-background{
+    background-color: #222222;
+    height: 90vh;
+    padding-top: 10vh;
+}
+.footer {
+    display: block;
+    box-sizing: border-box;
+    height: 58%;
+    background-color: #7F39FB;
+    clip-path: ellipse(72% 100% at 50% 100%);
+    position: relative;
+    top: 42%;
+    }
+
+.input-wrapper{
+    float: right;
+    margin-left: 0px;
+    margin-top: 5%;
+    width: 50%;
+    }
+.login-bigtext{
+    color: #fff;
+    font-size: 2rem;
+    float: left;
+}
+
+.login-buttonwrapper{
+    display: flex;
+    flex-direction: row;
+    margin: auto; 
+    float: left;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 80%;
+}
+}
+
+@media only screen and (max-width: 767px) {
+    .login-box{
+        background-color: #272727;
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+        padding-top: 50px;
+        border-radius: 20px;
+    }
+    
+    .login-input{
+        border:none;
+        outline: none;
+        border-bottom: 1px solid #fff;
+        background-color: #272727;
+        transition: .5s;
+        color: #fff;
+        width: 80%;
+        height: 40px;
+        padding-top: 8%;
+        font-size: 2rem;
+    }
+    
+    .login-button{
+        width: 80%;
+        background-color: #7F39FB;
+        height: 60px;
+        border-radius: 25px;
+        border: 0px;
+        color: #fff;
+        margin-top: 12%;
+        font-size: 2rem;
+    }
+    
+    .login-linktext{
+        color: #7F39FB;
+    }
+    
+    .login-text{
+        color: #fff;
+    }
+    
+    .login-background{
+        background-color: #222222;
+        height: 100vh;
+    }
+}

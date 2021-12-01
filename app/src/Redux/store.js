@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import apiSlice from './apiSlice'
+import CredentialReducer from './CredentialSlice'
+
 export default configureStore({
   reducer: {
-    counter: apiSlice,
-  },
+    credentials: CredentialReducer
+
+  }
 })

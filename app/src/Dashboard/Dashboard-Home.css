@@ -88,8 +88,6 @@
 
 @media only screen and (max-width: 767px) {
     .DashNavBar{
-        width: 3vw;
-        height: 100vh;
         position: fixed;
         float: left;
         z-index: +1;
@@ -115,13 +113,12 @@
     .DashContentHorizontal{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;    
     }
     
     .DashContentVertical{
         display: flex;
         flex-direction: column;
-    
+        justify-content: space-between;
     }
     
     .DashText{

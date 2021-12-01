@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './Redux/store'
 import { Provider } from 'react-redux'
+import store from "./Redux/store"
+import { CookiesProvider } from 'react-cookie';
 
 document.title = "test"
 
+
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+
+    <Provider store={store}>
+      <CookiesProvider>
+        <App />
+      </CookiesProvider>
+    </Provider>,
   document.getElementById('root'),
 );
 

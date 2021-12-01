@@ -5,10 +5,9 @@ class Plans extends React.Component {
         return <div>
                     <div className={"container"}>
                         <div className={"firstt card"}>
-                            <p className={"bigtext"}>Standard</p>
+                            <p className={"bigtext"}>Lightweight</p>
                             <span>
                             <p>Custom Domain</p>
-                            <p>10 Modules</p>
                             <p>3 GB Storage</p>
                             <p>Unlimited Traffic</p>
                             <p>Regular Support</p>
@@ -16,10 +15,9 @@ class Plans extends React.Component {
                             <button className={"selectplanbtn"}>Select Plan</button>
                         </div>
                         <div className={"second card"}>
-                            <p className={"bigtext"}> To Be Named</p>
+                            <p className={"bigtext"}>Standard</p>
                             <span>
                             <p>Custom Domain</p>
-                            <p>50 Modules</p>
                             <p>6 GB Storage</p>
                             <p>Unlimited Traffic</p>
                             <p>Regular Support</p>
@@ -30,7 +28,6 @@ class Plans extends React.Component {
                             <p className={"bigtext"}> Pro</p>
                             <span>
                             <p>Custom Domain</p>
-                            <p>Unlimited Modules</p>
                             <p>12 GB Storage</p>
                             <p>Unlimited Traffic</p>
                             <p>Priority Support</p>

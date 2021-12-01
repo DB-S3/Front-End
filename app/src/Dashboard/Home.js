@@ -4,11 +4,18 @@ import DoughnutGraph from './content/DoughnutGraph';
 import LineChart from './content/LineChart';
 import './Dashboard-Home.css'
 import './switch.css'
-import Navbar from './Navbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Redirect } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
+import AuthService from '../Components/auth0/AuthService';
+
 
 function Home() {
+  const [redirect, setRedirect] = useState(null);
+
+  const [cookies] = useCookies(['id']);
+
   const notify = (message) => toast(message, {
     position: "top-right",
     autoClose: 5000,
@@ -19,7 +26,13 @@ function Home() {
     progress: undefined,
     });
 
-  
+    if (new AuthService().isAuthenticated() == false) {
+      new AuthService().login();
+    }
+
+    if (redirect != null) {
+      return <Redirect to={redirect}/>
+    }
   return (
     
       <div>
@@ -51,6 +64,7 @@ function Home() {
               </div>
               <div className={"DashContentBox"}>
                 <p style={{color: "#fff"}}>Website Editor</p>
+                <button onClick={() => setRedirect("/cms")} className={"Account-Button"}>Open Editor</button>
 
               </div>
             </span>
@@ -60,8 +74,7 @@ function Home() {
                 <LineChart/>
               </div>
               <div className={"DashContentBox"}>
-              <p style={{color: "#fff"}}>To be added</p>
-
+              <p style={{color: "#fff"}}>{cookies.id}</p>
               </div>
             </span>
             <span className={"DashContentVertical"}> 

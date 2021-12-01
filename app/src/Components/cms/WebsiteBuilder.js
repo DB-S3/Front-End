@@ -22,15 +22,17 @@ class WebsiteBuilder extends React.Component {
         this.state={
             dataJson: null,
             currentObj: null,
-            objOptions: false,
-            taskbarVisible: false
-        };
+            objOptions: false,        };
 
 
         const instance = axios.create({
             baseURL: 'http://localhost:5000'
           });
           instance.get('/page/viewpage/test').then(response => this.setState({dataJson: response.data}))
+    }
+
+    disableTaskbar = () => {
+        this.setState({objOptions: false});
     }
 
     setCurrentObject = (newObj) => {
@@ -67,7 +69,7 @@ class WebsiteBuilder extends React.Component {
                 </div>;
         }
         return <div>
-                <TaskBar visible={this.state.taskbarVisible} objList={this.state.dataJson} objOptions={this.state.objOptions} changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
+                <TaskBar visible={this.state.taskbarVisible} objList={this.state.dataJson.objects} objOptions={this.state.objOptions} disableTaskbar={this.disableTaskbar} changeObjFunction={this.optionsChange} obj={this.state.currentObj}/>
                 <div>{this.state.dataJson.objects.map( (object) => <CMSComponent setCurrentObject={this.setCurrentObject} key={object.key} lock={test} obj={object}/>)}</div>
                 <span onClick={()=> this.setState({taskbarVisible: true})} style={{left: "0px", position: 'fixed', height: "75px", width: "30px", backgroundColor: "green", top: "30vh"}}></span>
         </div>;
