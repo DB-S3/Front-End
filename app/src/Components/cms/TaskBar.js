@@ -1,23 +1,23 @@
 import React from 'react';
 import axios from 'axios';
 import './input.css';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import TreeView from '@mui/lab/TreeView';
-import TreeItem from '@mui/lab/TreeItem';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+//import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+//import TreeView from '@mui/lab/TreeView';
+//import TreeItem from '@mui/lab/TreeItem';
+//import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+//import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 function TaskBar(props) {
   var data = props.obj;
   var newObject= false;
 
-  function createTreeView(object){
+  /*function createTreeView(object){
     if(object.children.count == 0){
       return <TreeItem nodeId={object.key} label={object.key} />;
     }
     return <TreeItem nodeId={object.key} label={object.key} > {object.children.map(object => createTreeView(object))} </TreeItem>
 
-  }
+  }*/
 
   function changeOption(id){
     props.changeObjFunction(id, data);
@@ -28,14 +28,14 @@ function TaskBar(props) {
           <div className={"input-box"}>
             <p>Options</p>
             <p onClick={() => props.disableTaskbar()}>x</p>
-              <TreeView
+             { /*<TreeView
                 aria-label="file system navigator"
                 defaultCollapseIcon={<ExpandMoreIcon />}
                 defaultExpandIcon={<ChevronRightIcon />}
                 sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
               >
                 {props.objList.map( (object) => createTreeView(object))}
-              </TreeView>
+             </TreeView>*/}
           </div>
           <a className={"input-savebutton input-box"} onClick={newObject = true}>New Object</a>
           <a className={"input-setbottom input-savebutton input-box"} onClick={() => axios.create({
@@ -49,7 +49,7 @@ function TaskBar(props) {
 
 
         <span style={{display: 'flex', position: 'fixed', zIndex: "+1",flexDirection: 'column', width: "10vw", height: "100vh", backgroundColor: '#222222', visibility: props.objOptions ? "visible" : "hidden"}}>
-          <div className={"input-box"}>
+          {/*<div className={"input-box"}>
           <ArrowBackIcon  style={{float: "left"}} onClick={() => props.disableTaskbar()}/>
             <p  style={{marginTop: "0px"}}>Options</p>
           </div>
@@ -60,7 +60,7 @@ function TaskBar(props) {
                 sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
               >
                 {props.obj ? props.obj.children.map( (object) => createTreeView(object)) : null}
-              </TreeView>
+        </TreeView>*/}
           <div className={"input-box"}>
             <label className={"label-for-input"} for="fname">X position: </label><br/>
             <input type="number" className={"input-textfield"} value={props.obj ? props.obj.x : 0} onChange={(event) => {data.x =+ event.target.valueAsNumber; props.changeObjFunction(props.obj.objectId, data); console.log(data.x);}}  id="fname" name="fname"/>

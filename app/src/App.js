@@ -9,19 +9,14 @@ import {
 } from "react-router-dom";
 import WebsiteBuilder from './Components/cms/WebsiteBuilder';
 import Landing from './Components/LandingPage/Landing';
-import Plans from './Components/LandingPage/Plans';
-import { useSelector, useDispatch } from 'react-redux'
 import Website from './Components/viewsite/Website';
-import AccountPage from './Dashboard/AccountPage';
-import LoginButton from './Components/login/Login';
-import Profile from './Components/login/Profile';
-import Register from './Components/login/Register';
 import RequestPasswordReset from './Components/login/RequestPasswordReset';
 import PasswordReset from './Components/login/PasswordReset';
 import Test from './Components/auth0/Test';
 import AuthService from './Components/auth0/AuthService';
 import { Redirect } from 'react-router';
 import Filetest from './Components/Filetest';
+import Plans from '../src/Components/AccountSetup/Plans'
 
 function App() {
 
@@ -36,18 +31,12 @@ function App() {
   }
 
   if(window.location.hostname == "localhost"){
-  return (
+  return (  
     <div className="App">
          <Router>
           <Switch>
             <Route path="/login">
              <Test  auth={new AuthService()}/>
-            </Route>
-            <Route path="/test">
-             <Filetest/>
-            </Route>
-            <Route path="/register">
-             <Register />
             </Route>
             <Route path="/resetRequest">
               <RequestPasswordReset/>
@@ -56,9 +45,6 @@ function App() {
             <Route path="/reset/:id">
             <PasswordReset/>
             </Route>
-            <Route path="/profile">
-              <Profile/>
-            </Route>
             <Route path="/plans">
               <Plans />
             </Route>
@@ -66,16 +52,13 @@ function App() {
               <Landing />
             </Route>
             <Route path="/cms">
-              <WebsiteBuilder/>
+             {/* <WebsiteBuilder/>*/}
             </Route>
             <Route path="/website">
               <Website/>
             </Route>
             <Route path="/dashboard">
               <Home/>  
-            </Route>
-            <Route path="/account">
-              <AccountPage/>  
             </Route>
             <Route path="*">
             404 Page Not Found<br/>
