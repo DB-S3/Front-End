@@ -39,8 +39,8 @@ function TaskBar(props) {
           </div>
           <a className={"input-savebutton input-box"} onClick={newObject = true}>New Object</a>
           <a className={"input-setbottom input-savebutton input-box"} onClick={() => axios.create({
-            baseURL: 'http://localhost:5000'
-          }).post('/api/object/editOptions',
+            baseURL: 'https://orisy-gateway.azurewebsites.net'
+          }).post('/api/changepage',
           data
           ).then(response => console.log(response))}>Save</a>
         </span>
@@ -123,8 +123,8 @@ function TaskBar(props) {
             <input className={"input-colorpicker"} type="color" id="favcolor" name="favcolor" value={props.obj ? props.obj.backgroundColour : '#fff'} onChange={(event) => {data.backgroundColour = event.target.value; props.changeObjFunction(props.obj.objectId, data);}}></input>
           </div>
           <a className={"input-setbottom input-savebutton input-box"} onClick={() => axios.create({
-            baseURL: 'http://localhost:5000'
-          }).post('/api/object/editOptions',
+            baseURL: 'https://orisy-gateway.azurewebsites.net'
+          }).post('/api/changepage',
           data
            ).then(response => console.log(response))}>Save</a>
         </span>

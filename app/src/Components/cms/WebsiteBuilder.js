@@ -24,11 +24,11 @@ class WebsiteBuilder extends React.Component {
             currentObj: null,
             objOptions: false,        };
 
-
+        console.log(props.pageId);
         const instance = axios.create({
-            baseURL: 'http://localhost:5000'
+            baseURL: 'https://orisy-gateway.azurewebsites.net'
           });
-          instance.get('/page/viewpage/test').then(response => this.setState({dataJson: response.data}))
+          instance.get('/api/viewpage/'+ props.pageId).then(response => this.setState({dataJson: response.data}))
     }
 
     disableTaskbar = () => {
