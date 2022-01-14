@@ -12,11 +12,9 @@ document.title = "test"
 
 ReactDOM.render(
 
-    <Provider store={store}>
-      <CookiesProvider>
+
         <App />
-      </CookiesProvider>
-    </Provider>,
+,
   document.getElementById('root'),
 );
 
