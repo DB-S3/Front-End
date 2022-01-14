@@ -17,6 +17,9 @@ import AuthService from './Components/auth0/AuthService';
 import { Redirect } from 'react-router';
 import Filetest from './Components/Filetest';
 import Plans from '../src/Components/AccountSetup/Plans'
+import SiteNamePicker from './Components/AccountSetup/SiteNamePicker';
+import Page from './Components/cms/Page';
+import CMS from './Components/cms/CMS';
 
 function App() {
 
@@ -38,6 +41,12 @@ function App() {
             <Route path="/login">
              <Test  auth={new AuthService()}/>
             </Route>
+            <Route path="/page">
+              <Page/>
+            </Route>
+            <Route path="/testfile">
+             <Filetest/>
+            </Route>
             <Route path="/resetRequest">
               <RequestPasswordReset/>
             </Route>
@@ -48,11 +57,14 @@ function App() {
             <Route path="/plans">
               <Plans />
             </Route>
+            <Route path="/sitePicker">
+              <SiteNamePicker/>
+            </Route>
             <Route exact path="/">
               <Landing />
             </Route>
             <Route path="/cms">
-             {/* <WebsiteBuilder/>*/}
+             <CMS/>
             </Route>
             <Route path="/website">
               <Website/>

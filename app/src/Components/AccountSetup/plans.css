@@ -2,6 +2,7 @@
     width: 20vw;
     height: 60vh;
     border-radius: 10px;
+    position: relative;
 }
 
 .plan-container{
@@ -41,8 +42,9 @@ background: linear-gradient(144deg, rgba(127,57,251,1) 17%, rgba(178,136,253,1) 
 
 .svg-plan{
     position: relative;
-    bottom: -7vh;
+    top: -7vh;
     width: 20vw;
+    height: 20vh;
 }
 
 .plans-button{
@@ -70,4 +72,15 @@ background: linear-gradient(144deg, rgba(127,57,251,1) 17%, rgba(178,136,253,1) 
     height: 100vh;
     width: 100vw;
     background-color: #272727;
+    position: relative;
+}
+
+.price-text{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.plan-text{
+    color: #fff;
+    font-size: 1.3rem;
 }
