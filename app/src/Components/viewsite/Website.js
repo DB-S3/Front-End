@@ -13,9 +13,9 @@ class Website extends React.Component {
 
 
         const instance = axios.create({
-            baseURL: 'http://localhost:5000'
+            baseURL: 'https://orisy-gateway.azurewebsites.net'
           });
-          instance.get('/page/viewpage/'+ window.location.hostname + '/testpage').then(response => this.setState({dataJson: response.data}))
+          instance.get('/api/viewsite/'+ window.location.hostname + '/ttt').then(response => this.setState({dataJson: response.data}))
     }
 
 

@@ -1,0 +1,67 @@
+.siteNamePicker-page{
+    height: 100vh;
+    width: 100vw;
+    background-color: #272727;
+    position: relative;
+}
+
+.siteNamePicker-box{
+    height: 40vh;
+    width: 40vw;
+    position: relative;
+    border-radius: 15px;
+    top: 10vh;
+    margin: auto;
+}
+
+.siteNamePicker-box-inner{
+    height: 25vh;
+    width: 40vw;
+    position: relative;
+    border-radius: 0px 0px 15px 15px;
+    margin: auto;
+    background-color: #fff;
+    z-index: 1;
+    bottom: -10vh;
+}
+
+.Input-siteNamePicker{
+    display: block;
+    margin: 0;
+    padding: 0.4rem 0.4rem;
+    color: inherit;
+    width: 80%;
+    margin: auto;
+    top: 70px;
+    position: relative;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: inherit;
+    line-height: 2.1;
+    border: none;
+    border-radius: 0.6rem;
+    transition: box-shadow 300ms;
+  }
+
+  .Input-siteNamePicker:focus {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem #5e35b1;
+  }
+
+  .siteNamePicker-continuebutton{
+      background-color: rgb(127,57,251);
+      width: 6vw;
+      height: 6vh;
+      outline: none;
+      border: 0px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+      margin-right: 15px;
+      margin-bottom: 20px;
+      transition: box-shadow 200ms;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+  }
+

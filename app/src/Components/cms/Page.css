@@ -1,0 +1,57 @@
+.Page-Panel{
+    width: 80vw;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    transform: translate(10vw, -50%);
+    background-Color: #272727;
+    border-radius: 10px;
+}
+
+.page-new-button{
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
+    background-color: #7440CE;
+    border-color: #7440CE;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-new-button:hover {
+    color: #fff;
+    background-color: #A77EED;
+    border-color: #A77EED;
+}
+
+.Page-item{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-Color: #393939;
+    border-radius: 10px;
+}
+
+.Page-item-name{
+    position: absolute;
+    left: 20%;
+    bottom: 10px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.Page-item-settings-icon{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+
+}
