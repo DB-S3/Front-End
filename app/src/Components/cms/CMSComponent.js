@@ -64,10 +64,8 @@ class CMSComponent extends Component {
             } 
         }
         if(this.props.obj.type == 1){
-            if(this.props.obj.children == null){
-                return ( <img onMouseMove={(e) =>this.mouseMove(e)} style={{backgroundColor: this.props.obj.options.backgroundColour, height: this.props.obj.options.height+"px", width: this.props.obj.options.width+"px", left: this.props.obj.options.x + "px", top: this.props.obj.options.y + "px", position: this.props.obj.options.position, borderRadius: this.props.obj.options.borderRadius + "px"}} src={img} onMouseLeave={() => this.setState({hold: false})} onMouseDown={() =>  this.onClicking(true,true)} onMouseUp={() => this.onClicking(false,false)}>
+                return ( <img src={"https://orisy-gateway.azurewebsites.net/api/getimage"+this.props.obj.options.text} onMouseMove={(e) =>this.mouseMove(e)} style={{backgroundColor: this.props.obj.options.backgroundColour, height: this.props.obj.options.height + this.props.obj.options.heightUnit, width: this.props.obj.options.width + this.props.obj.options.widthUnit, left: this.props.obj.options.x + "px", top: this.props.obj.options.y + "px", position: this.props.obj.options.position, borderRadius: this.props.obj.options.borderRadius + "px"}} onMouseLeave={() => this.setState({hold: false})} onMouseDown={() =>  this.onClicking(true,true)} onMouseUp={() => this.onClicking(false,false)}>
                 </img> );
-            }
         }
         if(this.props.obj.type == 0){
             if(this.props.obj.children.length == 0){
