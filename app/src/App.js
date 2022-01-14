@@ -20,7 +20,9 @@ import Plans from '../src/Components/AccountSetup/Plans'
 import SiteNamePicker from './Components/AccountSetup/SiteNamePicker';
 import Page from './Components/cms/Page';
 import CMS from './Components/cms/CMS';
-
+import { Provider } from 'react-redux'
+import store from "./Redux/store"
+import { CookiesProvider } from 'react-cookie';
 function App() {
 
   function startSession(history) {
@@ -35,50 +37,54 @@ function App() {
 
   if(window.location.hostname == "localhost"){
   return (  
-    <div className="App">
-         <Router>
-          <Switch>
-            <Route path="/login">
-             <Test  auth={new AuthService()}/>
-            </Route>
-            <Route path="/page">
-              <Page/>
-            </Route>
-            <Route path="/testfile">
-             <Filetest/>
-            </Route>
-            <Route path="/resetRequest">
-              <RequestPasswordReset/>
-            </Route>
-            <Route path="/startSession" render={({history}) => startSession(history)}/>
-            <Route path="/reset/:id">
-            <PasswordReset/>
-            </Route>
-            <Route path="/plans">
-              <Plans />
-            </Route>
-            <Route path="/sitePicker">
-              <SiteNamePicker/>
-            </Route>
-            <Route exact path="/">
-              <Landing />
-            </Route>
-            <Route path="/cms">
-             <CMS/>
-            </Route>
-            <Route path="/website">
-              <Website/>
-            </Route>
-            <Route path="/dashboard">
-              <Home/>  
-            </Route>
-            <Route path="*">
-            404 Page Not Found<br/>
-            <Link to="/">Back to Home</Link>
-            </Route>
-          </Switch>
-        </Router>
-    </div>
+    <Provider store={store}>
+    <CookiesProvider>
+      <div className="App">
+          <Router>
+            <Switch>
+              <Route path="/login">
+              <Test  auth={new AuthService()}/>
+              </Route>
+              <Route path="/page">
+                <Page/>
+              </Route>
+              <Route path="/testfile">
+              <Filetest/>
+              </Route>
+              <Route path="/resetRequest">
+                <RequestPasswordReset/>
+              </Route>
+              <Route path="/startSession" render={({history}) => startSession(history)}/>
+              <Route path="/reset/:id">
+              <PasswordReset/>
+              </Route>
+              <Route path="/plans">
+                <Plans />
+              </Route>
+              <Route path="/sitePicker">
+                <SiteNamePicker/>
+              </Route>
+              <Route exact path="/">
+                <Landing />
+              </Route>
+              <Route path="/cms">
+              <CMS/>
+              </Route>
+              <Route path="/website">
+                <Website/>
+              </Route>
+              <Route path="/dashboard">
+                <Home/>  
+              </Route>
+              <Route path="*">
+              404 Page Not Found<br/>
+              <Link to="/">Back to Home</Link>
+              </Route>
+            </Switch>
+          </Router>
+      </div>
+      </CookiesProvider>
+    </Provider>
   );
   } else {
     return(<Website/>)
