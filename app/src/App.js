@@ -35,7 +35,7 @@ function App() {
     return <div><p>Starting session...</p></div>;
   }
 
-  if(window.location.hostname == "localhost"){
+  if(window.location.hostname == "jolly-swartz-d50d33.netlify.app"){
   return (  
     <Provider store={store}>
     <CookiesProvider>
