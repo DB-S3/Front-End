@@ -2,6 +2,7 @@ import React from 'react';
 import css from "./Page.css"
 import SettingsIcon from '@mui/icons-material/Settings';
 import axios from 'axios';
+import AuthService from '../auth0/AuthService';
 
 class Page extends React.Component {
     constructor(){
@@ -9,10 +10,29 @@ class Page extends React.Component {
         this.state={
             dataJson: []
         }
+
+        const token = new AuthService().getAccessToken();
+        const instance = axios.create({
+            baseURL: 'https://orisy-gateway.azurewebsites.net',
+            timeout: 1000,
+            headers: {'Authorization': 'Bearer '+token}
+          });
+          
+          instance.get('/api/getpagelist')
+          .then(response => {
+              console.log(response.data);
+          })
+        /*console.log(new AuthService().getAccessToken());
         const instance = axios.create({
             baseURL: 'https://orisy-gateway.azurewebsites.net'
           });
-          instance.get('/api/getpagelist').then(response => this.setState({dataJson: response.data}))
+          instance.get('/api/getpagelist',null,{
+            headers: {
+              'Authorization': 'Bearer' + token,
+              'Content-Type': 'application/x-www-form-urlencoded'
+
+            }
+          }).then(response => this.setState({dataJson: response.data}))*/
     }
 
     pageItem(x){
