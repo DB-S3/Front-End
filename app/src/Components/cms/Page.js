@@ -15,7 +15,7 @@ class Page extends React.Component {
         const instance = axios.create({
             baseURL: 'https://orisy-gateway.azurewebsites.net',
             timeout: 1000,
-            headers: {'Authorization': 'Bearer '+token}
+            headers: {'authorization': 'Bearer '+token, 'Content-Type': 'application/x-www-form-urlencoded'}
           });
           
           instance.get('/api/getpagelist')
